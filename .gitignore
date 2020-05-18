@@ -3,3 +3,5 @@ paralleltestwork/
 npm-debug.log
 solidity_practice/
 eth-netstats/
+pkg/
+bin/

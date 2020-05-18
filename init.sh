@@ -1,1 +1,1 @@
-geth --datadir paralleltestwork/ --nousb init paralleltestwork/genesis.json
+geth --datadir testnet/ --nousb init testnet/genesis.json
