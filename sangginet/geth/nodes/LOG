@@ -1,0 +1,42 @@
+=============== May 25, 2020 (KST) ===============
+15:07:39.367212 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:07:39.381605 db@open opening
+15:07:39.382863 version@stat F·[] S·0B[] Sc·[]
+15:07:39.392858 db@janitor F·2 G·0
+15:07:39.392932 db@open done T·11.2241ms
+15:50:45.931754 db@close closing
+15:50:45.932194 db@close done T·437.4µs
+=============== May 25, 2020 (KST) ===============
+15:50:47.310528 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+15:50:47.313641 version@stat F·[] S·0B[] Sc·[]
+15:50:47.313731 db@open opening
+15:50:47.314075 journal@recovery F·1
+15:50:47.314285 journal@recovery recovering @1
+15:50:47.319577 memdb@flush created L0@2 N·2 S·176B "loc..seq,v2":"version,v1"
+15:50:47.320418 version@stat F·[1] S·176B[176B] Sc·[0.25]
+15:50:47.343358 db@janitor F·3 G·0
+15:50:47.343440 db@open done T·29.6417ms
+17:11:44.907940 db@close closing
+17:11:44.908626 db@close done T·685.8µs
+=============== May 25, 2020 (KST) ===============
+17:15:40.102982 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+17:15:40.105534 version@stat F·[1] S·176B[176B] Sc·[0.25]
+17:15:40.105627 db@open opening
+17:15:40.105981 journal@recovery F·1
+17:15:40.106229 journal@recovery recovering @3
+17:15:40.112706 memdb@flush created L0@5 N·1 S·159B "loc..seq,v4":"loc..seq,v4"
+17:15:40.113572 version@stat F·[2] S·335B[335B] Sc·[0.50]
+17:15:40.127971 db@janitor F·4 G·0
+17:15:40.128027 db@open done T·22.3608ms
+=============== May 26, 2020 (KST) ===============
+11:25:16.237006 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+11:25:16.239684 version@stat F·[2] S·335B[335B] Sc·[0.50]
+11:25:16.239857 db@open opening
+11:25:16.240106 journal@recovery F·1
+11:25:16.240294 journal@recovery recovering @6
+11:25:16.245596 memdb@flush created L0@8 N·1 S·159B "loc..seq,v6":"loc..seq,v6"
+11:25:16.246227 version@stat F·[3] S·494B[494B] Sc·[0.75]
+11:25:16.258868 db@janitor F·5 G·0
+11:25:16.258931 db@open done T·19.0439ms
+19:29:52.036852 db@close closing
+19:29:52.037529 db@close done T·676.8µs

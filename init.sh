@@ -1,1 +1,1 @@
-geth --datadir testnet/ --nousb init testnet/genesis.json
+geth --datadir sangginet/ --nousb init sangginet/genesis.json
