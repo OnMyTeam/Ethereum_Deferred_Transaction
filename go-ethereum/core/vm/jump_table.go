@@ -1123,5 +1123,12 @@ func newFrontierInstructionSet() [256]operation {
 			maxStack:	maxStack(1, 0),
 			valid:		true,
 		},
+		EPC_ADD: {
+			execute:	opEPC_ADD,
+			constantGas:GasFastestStep,
+			minStack:	minStack(1, 0),
+			maxStack:	maxStack(1, 0),
+			valid:		true,
+		},	
 	}
 }

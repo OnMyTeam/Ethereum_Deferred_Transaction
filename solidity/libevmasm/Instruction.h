@@ -200,7 +200,8 @@ enum class Instruction: uint8_t
 	INVALID = 0xfe,		///< invalid instruction for expressing runtime errors (e.g., division-by-zero)
 	SELFDESTRUCT = 0xff,///< halt execution and register account for later deletion
 	LOCK = 0xc1,		///< lock the state variable
-	UNLOCK = 0xc2		///< unlock the state variable
+	UNLOCK = 0xc2,		///< unlock the state variable
+	EPC_ADD = 0xc3		///< EPC_ADD
 };
 
 /// @returns true if the instruction is a PUSH

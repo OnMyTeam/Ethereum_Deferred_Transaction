@@ -212,6 +212,7 @@ const (
 const (
 	LOCK OpCode = 0xc1 + iota
 	UNLOCK
+	EPC_ADD
       )
 // 0xf0 range - closures.
 const (
@@ -380,6 +381,7 @@ var opCodeToString = map[OpCode]string{
 	//0xc0 range.
 	LOCK:		"LOCK",
 	UNLOCK:		"UNLOCK",
+	EPC_ADD:	"EPC_ADD",
 
 	// 0xf0 range.
 	CREATE:       "CREATE",
@@ -548,6 +550,7 @@ var stringToOp = map[string]OpCode{
 	"SELFDESTRUCT":   SELFDESTRUCT,
 	"LOCK":			  LOCK,
 	"UNLOCK":		  UNLOCK,
+	"EPC_ADD":		  EPC_ADD,
 }
 
 // StringToOp finds the opcode whose name is stored in `str`.

@@ -927,7 +927,24 @@ func opUnlock(pc *uint64, interpreter *EVMInterpreter, contract *Contract, memor
 
 	return nil, nil
 }
+func opEPC_ADD(pc *uint64, interpreter *EVMInterpreter, contract *Contract, memory *Memory, stack *Stack) ([]byte, error) {
+	fmt.Println("<opEPC_ADD> IsDoCall=",interpreter.evm.IsDoCall)
+	ch_com:=interpreter.evm.StateDB.GetChannel(interpreter.evm.IsDoCall)
+	fmt.Println("ch_com=", ch_com)
+	param:= stack.pop().Int64()
+	fmt.Println("param=", param)
+	msg:=state.ChanMessage{
+		TxHash:interpreter.evm.Context.YMTxHash, ContractAddress: contract.Address(),
+		LockName: param, LockType:"EPC_ADD", IsLockBusy: false, Channel: make(chan state.ChanMessage,10),
+	}
+	fmt.Println("msg=", msg)
+	ch_com<-msg
+	fmt.Println("opEPC_ADD: send request!!")
 
+	<-msg.Channel
+
+	return nil, nil
+}
 // following functions are used by the instruction jump  table
 
 // make log instruction function

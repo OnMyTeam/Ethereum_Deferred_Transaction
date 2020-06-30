@@ -165,12 +165,29 @@ func (self *StateDB) MutexThread(com_channel chan ChanMessage, isDoCall bool, re
 				msg.LockType="NOT_OK"
 				msg.Channel <- msg
 			}
-		}else if(msg.LockType=="TERMINATION") {
+		}else if (msg.LockType=="TERMINATION") {
 			if(isDoCall!=true) { //when mining
 				resChannel<-recording_info
 			}
 			return
+		}else if (msg.LockType=="EPC_ADD") {
+			if(CurrentLockArray[key].TxHash == msg.TxHash){ //it must be a same transaction who have been locked
+				msg.LockType="OK"
+				msg.Channel <- msg
+				if(len(LockRequestArray[key]) != 0){ //somebody is waiting
+					LockRequestArray[key][0].Channel <- msg
+					CurrentLockArray[key] = LockRequestArray[key][0]	//change current lock tx
+					LockRequestArray[key] = LockRequestArray[key][1:]	//get rid of the current lock tx from lock request array
+				} else {
+					msg.IsLockBusy = false
+					CurrentLockArray[key] = msg
+				}
+			} else { //somebody tries to unlock fakely
+				msg.LockType="NOT_OK"
+				msg.Channel <- msg
+			}
 		}	
+		
     }
 }
 

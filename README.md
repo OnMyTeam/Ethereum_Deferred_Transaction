@@ -93,18 +93,18 @@ $ ./run.sh
 ### C. 컨트랙트 배포
 abi와 bytecode는 3-A를 통해 알아냄
 ```
-> var abi = <abi>
-> var bytecode = <bytecode>
-> var contract = eth.contract(abi)
-> var deploy = {from:eth.coinbase, data:bytecode, gas: 2000000}
-> var instance = contract.new("DISQUALIFIED!", deploy)
+var abi = <abi>
+var bytecode = <bytecode>
+var contract = eth.contract(abi)
+var deploy = {from:eth.coinbase, data:bytecode, gas: 2000000}
+var instance = contract.new("DISQUALIFIED!", deploy)
 ```
 ### D. 배포된 컨트랙트 인스턴스 생성
 abi는 배포된 컨트랙트의 abi이고 address는 배포된 컨트랙트의 주소
 ```
-> var abi = <abi>
-> var address = <contract address>
-> var instance = eth.contract(abi).at(address)
+var abi = <abi>
+var address = <contract address>
+var instance = eth.contract(abi).at(address)
 ```
 ### E. 컨트랙트 트랜잭션 호출
 3-C 또는 3-D로부터 생성된 컨트랙트 인스턴스를 사용하여 트랜잭션 호출
@@ -172,7 +172,9 @@ git 최신버전 가져오기
 ```
 $ git pull
 ```
-## 5. 유용 링크
+## 5. Swarm 사용방법
+
+## 6. 유용 링크
 ```
 1. CRDT: Conflict-free Replicated Data Types(modification에 대해 락을 사용하지 않고 프로토콜만을 사용하여 동기화가 가능하게 하는 기법 중의 하나)
 https://medium.com/@amberovsky/crdt-conflict-free-replicated-data-types-b4bfc8459d26

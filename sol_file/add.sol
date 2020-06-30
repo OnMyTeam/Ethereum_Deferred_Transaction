@@ -1,16 +1,26 @@
 pragma solidity ^0.5.0;
 
-contract TicketSeller{
-  uint256 a=5;
-  
-  function add() public
-  {
-	require(a>3);
-	a+=1;
-  }
-  
-  function read() public view returns(uint256) {
-      	return a;
-  }
-}
+import './ConvertLib.sol';
 
+contract A{
+    using ConvertLib for *;
+    address text;
+    uint num;
+    constructor() public{
+        
+      text = address(this);
+      
+    }
+    function setNum() public {
+      num = ConvertLib.convert();
+      
+    }    
+    function getText() public view returns(address) {
+      
+      return text;
+    }
+    function getNum() public view returns(uint) {
+      
+      return num;
+    }    
+}
